@@ -1,6 +1,7 @@
 package com.example.nullaway.domain;
 
 import java.util.Objects;
+import org.jspecify.annotations.Nullable;
 
 public record UserProfile(String id, DisplayName displayName, EmailAddress emailAddress) {
   public UserProfile {
@@ -15,6 +16,10 @@ public record UserProfile(String id, DisplayName displayName, EmailAddress email
   }
 
   public String preferredName() {
-    return displayName.nickname().orElse(emailAddress.localPart());
+    @Nullable String nickname = displayName.nicknameOrNull();
+    if (nickname != null) {
+      return nickname;
+    }
+    return emailAddress.localPart();
   }
 }

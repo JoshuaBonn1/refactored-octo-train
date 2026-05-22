@@ -1,6 +1,5 @@
 package com.example.nullaway.domain;
 
-import java.util.Optional;
 import org.jspecify.annotations.Nullable;
 
 public final class DisplayName {
@@ -8,10 +7,6 @@ public final class DisplayName {
 
   public DisplayName(@Nullable String nickname) {
     this.nickname = blankToNull(nickname);
-  }
-
-  public Optional<String> nickname() {
-    return Optional.ofNullable(nickname);
   }
 
   public @Nullable String nicknameOrNull() {
