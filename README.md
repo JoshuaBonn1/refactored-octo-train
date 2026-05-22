@@ -37,7 +37,7 @@ To see NullAway diagnostics, enable the profile that adds the intentional failur
 mvn -Pnullaway-demo-failures compile
 ```
 
-The default build should pass. The profile build should fail with NullAway errors such as dereferencing a `@Nullable` value, returning `null` from a non-null method, and adding `null` to `List<String>` in JSpecify mode.
+The default build should pass. The profile build should fail with NullAway errors such as dereferencing a `@Nullable` value and returning `null` from a non-null method.
 
 ## Key Maven settings
 
